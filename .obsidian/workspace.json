@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Linux/Incident Surface.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -150,19 +150,9 @@
               "icon": "lucide-list",
               "title": "Outline of Analyse iOS"
             }
-          },
-          {
-            "id": "f127fd897cf9bcb2",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -177,20 +167,19 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false,
-      "obsidian-git:Open Git source control": false
+      "bases:Create new base": false
     }
   },
   "active": "11760d5fe8d2d991",
   "lastOpenFiles": [
-    "_images/SCR-20251004-lfdn.png",
     "Linux/SCR-20251004-lfdn.png",
-    "_images/SCR-20251004-lada.png",
-    "Linux/SCR-20251004-lada.png",
+    "Linux/Incident Surface.md",
     "Linux/Forensic Imaging.md",
     "Réponse à incident.md",
+    "_images/SCR-20251004-lfdn.png",
+    "_images/SCR-20251004-lada.png",
+    "Linux/SCR-20251004-lada.png",
     "Windows/Registre.md",
-    "Linux/Incident Surface.md",
     "Mobile/Analyse iOS.md"
   ]
 }
