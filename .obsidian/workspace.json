@@ -150,8 +150,19 @@
               "icon": "lucide-list",
               "title": "Outline of Analyse iOS"
             }
+          },
+          {
+            "id": "f127fd897cf9bcb2",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -172,7 +183,14 @@
   },
   "active": "11760d5fe8d2d991",
   "lastOpenFiles": [
-    "Mobile/Analyse iOS.md",
-    "Linux/Incident Surface.md"
+    "_images/SCR-20251004-lfdn.png",
+    "Linux/SCR-20251004-lfdn.png",
+    "_images/SCR-20251004-lada.png",
+    "Linux/SCR-20251004-lada.png",
+    "Linux/Forensic Imaging.md",
+    "Réponse à incident.md",
+    "Windows/Registre.md",
+    "Linux/Incident Surface.md",
+    "Mobile/Analyse iOS.md"
   ]
 }
