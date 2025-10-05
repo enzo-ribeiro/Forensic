@@ -171,10 +171,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "11760d5fe8d2d991",
+  "active": "e7a9eb51c9de9cf4",
   "lastOpenFiles": [
-    "Linux/Incident Surface.md",
     "Linux/Analysis Process.md",
+    "Untitled.md",
+    "DRIR",
+    "Linux/Incident Surface.md",
     "_images/Pasted image 20251005140200.png",
     "Linux/Forensic Imaging.md",
     "_images/Pasted image 20251005140053.png",
@@ -183,7 +185,7 @@
     "_images/Pasted image 20251004130126.png",
     "_images/Pasted image 20251004125812.png",
     "Linux/SCR-20251004-lfdn.png",
-    "Réponse à incident.md",
+    "DRIR/Réponse à incident.md",
     "_images/SCR-20251004-lfdn.png",
     "_images/SCR-20251004-lada.png",
     "Linux/SCR-20251004-lada.png",
