@@ -11,14 +11,12 @@
             "id": "11760d5fe8d2d991",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Linux/Incident Surface.md",
-                "mode": "source",
-                "source": false
+                "file": "_images/Pasted image 20251005140200.png"
               },
-              "icon": "lucide-file",
-              "title": "Incident Surface"
+              "icon": "lucide-image",
+              "title": "Pasted image 20251005140200"
             }
           }
         ]
@@ -171,15 +169,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "11760d5fe8d2d991",
+  "active": "e7a9eb51c9de9cf4",
   "lastOpenFiles": [
-    "Linux/Forensic Imaging.md",
-    "Pasted image 20251005140200.png",
     "Linux/Incident Surface.md",
-    "Pasted image 20251005140053.png",
-    "Pasted image 20251005130848.png",
-    "Pasted image 20251004130148.png",
-    "Pasted image 20251004130126.png",
+    "Linux/Forensic Imaging.md",
+    "_images/Pasted image 20251005140200.png",
+    "_images/Pasted image 20251005140053.png",
+    "_images/Pasted image 20251005130848.png",
+    "_images/Pasted image 20251004130148.png",
+    "_images/Pasted image 20251004130126.png",
     "_images/Pasted image 20251004125812.png",
     "Linux/SCR-20251004-lfdn.png",
     "Réponse à incident.md",
