@@ -144,11 +144,8 @@ $ pspy64
 2025/10/06 11:58:14 CMD: UID=0     PID=6370   | /bin/sh -c /bin/echo -e 'VEhNezg1MWE5ODE0NDVkYmZiOTQ4NWMzNzcxNTEwYTUzNTY4fQ==' 
 2025/10/06 11:58:14 CMD: UID=0     PID=6371   | sleep 15 
 
+$ base64 -d 'VEhNezg1MWE5ODE0NDVkYmZiOTQ4NWMzNzcxNTEwYTUzNTY4fQ==''
+THM{851a981445dbfb9485c3771510a53568}
+
 A : THM{851a981445dbfb9485c3771510a53568}
-```
-
-```
-Q : 
-
-A : 
 ```
