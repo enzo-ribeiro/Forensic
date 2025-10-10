@@ -113,7 +113,13 @@ $ grep 'Accepted password' /var/log/auth.log
 May 31 11:17:00 server sshd[2009]: Accepted password for root from 192.168.1.50 port 22 ssh2
 ```
 
-'Accepted password' peut être remplacé par 'sudo' ou autre chose. 
+'Accepted password' peut être remplacé par 'sudo', 'session opened' ou autre chose. 
+
+Filtrage par jour/heure : 
+```Bash 
+awk '/2024-06-04 15:30:00/,/2024-06-05 15:29:59/' /var/log/auth.log
+```
+
 
 ### `syslog`
 
@@ -214,3 +220,86 @@ A : 9
 
 
 ## `Journalctl`
+
+Binaire utilisé par les Distributions basés sur systemd.
+C'est un outil très puissant, il fournit des logs structurés et indexés, ce qui permet de "personnaliser" l'output (filtrage spécifique).
+
+### Utilisation de la commande
+
+Pour afficher les legs avec `journalctl` c'est simple : 
+```Bash
+$ journalctl
+
+-- Logs begin at Wed 2023-09-06 07:57:36 UTC, end at Tue 2024-06-11 08:17:01 UTC. --
+Sep 06 07:57:36 ubuntu kernel: Linux version 5.4.0-1029-aws (buildd@lcy01-amd64-022) (gcc version 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04)) #30-Ubuntu SMP Tue Oct 20 10:06:38 UTC 2020 (Ub>
+Sep 06 07:57:36 ubuntu kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-5.4.0-1029-aws root=PARTUUID=da63a61e-01 ro console=tty1 console=ttyS0 nvme_core.io_timeout=4294967295 panic=-1
+Sep 06 07:57:36 ubuntu kernel: KERNEL supported cpus:
+Sep 06 07:57:36 ubuntu kernel:   Intel GenuineIntel
+Sep 06 07:57:36 ubuntu kernel:   AMD AuthenticAMD
+Sep 06 07:57:36 ubuntu kernel:   Hygon HygonGenuine
+Sep 06 07:57:36 ubuntu kernel:   Centaur CentaurHauls
+Sep 06 07:57:36 ubuntu kernel:   zhaoxin   Shanghai  
+Sep 06 07:57:36 ubuntu kernel: x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+Sep 06 07:57:36 ubuntu kernel: x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+Sep 06 07:57:36 ubuntu kernel: x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+Sep 06 07:57:36 ubuntu kernel: x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+Sep 06 07:57:36 ubuntu kernel: x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+```
+
+Voici les arguments possible avec `journalctl`
+
+| Argument     | Description                                                                                    | Exemple                               |
+| ------------ | ---------------------------------------------------------------------------------------------- | ------------------------------------- |
+| `-f`         | Suivez le journal et affichez les nouvelles entrées au fur et à mesure qu'elles sont ajoutées. | `journalctl -f`                       |
+| `-k`         | Afficher uniquement les messages du noyau.                                                     | `journalctl -k`                       |
+| `-b`         | Afficher les messages d'un démarrage spécifique.                                               | `journalctl -b -1`                    |
+| `-u`         | Filtrer les messages par une unité spécifique.                                                 | `journalctl -u apache.service`        |
+| `-p`         | Filtrer les messages par priorité.                                                             | `journalctl -p err`                   |
+| `-S`         | Afficher les messages depuis une heure spécifique.                                             | `journalctl -S "2021-05-24 14:08:01"` |
+| `-U`         | Afficher les messages jusqu'à une heure précise.                                               | `journalctl -U "2021-05-24 15:46:01"` |
+| `-r`         | Inversez la sortie, en affichant d'abord les entrées les plus récentes.                        | `journalctl -r`                       |
+| `-n`         | Limitez le nombre de lignes affichées.                                                         | `journalctl -n 20`                    |
+| `--no-pager` | Ne dirigez pas la sortie vers un pager.                                                        | `journalctl --no-pager`               |
+
+Nous pouvons également, filtré les journaux pour avoir seulement les logs entre telles et telles date : 
+```bash
+$ journalctl -S "2024-02-06 15:30:00" -U "2024-02-17 15:29:59"
+```
+
+Filtrage par heures : 
+```Bash
+$ journalctl -S "2 hours ago"
+```
+
+Par criticité : 
+```Bash
+journalctl -p crit 
+-- Logs begin at Sun 2022-02-27 13:52:14 UTC, end at Tue 2024-06-18 08:16:30 UTC. --
+Feb 27 15:14:15 ip-10-10-238-44 gnome-session-binary[38253]: CRITICAL: We failed, but the fail whale is dead. Sorry....
+-- Reboot --
+Jun 11 19:20:37 tryhackme sudo[77760]: pam_unix(sudo:auth): auth could not identify password for [www-data]
+Jun 11 19:20:37 tryhackme sudo[77760]: www-data : command not allowed ; TTY=unknown ; PWD=/var/www/html ; USER=root ; COMMAND=list
+Jun 11 19:33:44 tryhackme sudo[77794]: pam_unix(sudo:auth): auth could not identify password for [www-data]
+```
+
+### Question THM
+```txt
+Q : To configure the persistence of journal logs, which parameter has to be modified within the journald configuration file?
+
+A : Storage
+```
+
+## Logs d'applications
+
+Prenons l'exemple de l'application apache2. 
+Les logs se trouve dans `/var/log/apache2/{access.log,error.log}`, elles sont configurées dans `/etc/apache2/apache2.conf`.
+
+Pour lire les logs nous pouvons utiliser (comme toutes les autres logs) `cat`, `less` ou `tail`.
+
+Nous pouvons également filtrer l'output avec `grep` : 
+```Bash
+grep "10.109.30.250" /var/log/apache2/access.log*
+```
+
+Nous pouvons filtrer avec les codes erreurs (404, 403 etc.).
+
