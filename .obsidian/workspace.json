@@ -186,8 +186,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e4c5f9cadb67bf2c",
+  "active": "e7a9eb51c9de9cf4",
   "lastOpenFiles": [
+    "docs/_config.yml",
+    "docs",
     "LPIC 303.md",
     "LPIC 303.md",
     "Linux/Forensic Imaging.md",
