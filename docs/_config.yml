@@ -1,7 +1,0 @@
-title: Forensic
-description: Un site construit avec Jekyll et GitHub Pages
-theme: jekyll-theme-primer
-plugins:
-  - jekyll-seo-tag
-  - jekyll-relative-links
-
